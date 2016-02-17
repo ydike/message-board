@@ -6,7 +6,7 @@
   <div class="panel-body">
     <% @messages.each do |message| %>
       <span class="label label-info"><%= message.name %></span>
-      <%= message.body %>
+     <textarea class="form-control" rows="3"> <%= message.body %></textarea>
       <br>
     <% end %>
   </div>
@@ -17,6 +17,6 @@
   <%= f.text_field :name %>
 
   内容:
-  <%= f.text_field :body %>
+ <textarea type="text" name="message[body]" id="message_body" class="form-control" rows="3"></textarea>
   <%= f.submit class: "btn btn-sm btn-primary" %>
 <% end %>
