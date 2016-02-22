@@ -1,8 +1,7 @@
 class MessagesController < ApplicationController
   before_action :set_message, only: [:edit, :update]
   
-  def edit
-  end
+  
   
   def index
     @message = Message.new
@@ -19,6 +18,9 @@ class MessagesController < ApplicationController
       flash.now[:alert] = "メッセージの保存に失敗しました。"
       render 'index'
     end
+  end
+  
+  def edit
   end
 
  def update
