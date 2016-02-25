@@ -1,14 +1,12 @@
 class MessagesController < ApplicationController
   before_action :set_message, only: [:edit, :update]
   
-  
-  
   def index
     @message = Message.new
     # Messageを全て取得する。
     @messages = Message.all
   end
-   def create
+  def create
     @message = Message.new(message_params)
     if @message.save
       redirect_to root_path , notice: 'メッセージを保存しました'
@@ -23,7 +21,7 @@ class MessagesController < ApplicationController
   def edit
   end
 
- def update
+  def update
     if @message.update(message_params)
       # 保存に成功した場合はトップページへリダイレクト
       redirect_to root_path , notice: 'メッセージを編集しました'
